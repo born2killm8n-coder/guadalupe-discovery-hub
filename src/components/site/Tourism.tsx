@@ -10,7 +10,8 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 import { atractivos, type Atractivo } from "@/data/guadalupe";
-import { ImagePlaceholder } from "./ImagePlaceholder";
+import { images } from "@/data/images";
+import { SmartImage } from "./SmartImage";
 import { SectionHeading } from "./SectionHeading";
 
 export function Tourism() {
