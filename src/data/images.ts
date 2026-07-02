@@ -7,11 +7,11 @@ export const images = {
   hero: "/images/hero.svg",
 
   turismo: {
-    "pueblo-historico": "/images/turismo-pueblo-historico.svg",
+    "pueblo-historico": "/images/turismo-pueblo-historico.jpg",
     "iglesia-matriz": "/images/turismo-iglesia-matriz.jpg",
-    pakatnamu: "/images/turismo-pakatnamu.svg",
+    pakatnamu: "/images/turismo-pakatnamu.jpg",
     "playa-bocana": "/images/turismo-playa-bocana.svg",
-    pacatnamu: "/images/turismo-pacatnamu.svg",
+    pacatnamu: "/images/turismo-pacatnamu.jpg",
     campina: "/images/turismo-campina.jpg",
   },
 
