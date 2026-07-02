@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Compass, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { images } from "@/data/images";
 
 export function Hero() {
   return (
@@ -8,14 +9,16 @@ export function Hero() {
       id="inicio"
       className="relative min-h-[100dvh] w-full overflow-hidden pt-24"
     >
-      {/* Placeholder de imagen de fondo */}
+      {/* Imagen de fondo — reemplaza /public/images/hero.svg */}
       <div className="absolute inset-0 -z-10">
-        <div
-          role="img"
-          aria-label="Reemplazar imagen de fondo del hero"
-          className="h-full w-full bg-[radial-gradient(circle_at_20%_20%,oklch(0.55_0.13_170/0.5),transparent_55%),radial-gradient(circle_at_80%_10%,oklch(0.82_0.11_85/0.35),transparent_55%),linear-gradient(135deg,oklch(0.24_0.05_215),oklch(0.32_0.07_195))]"
+        <img
+          src={images.hero}
+          alt="Distrito de Guadalupe, Pacasmayo"
+          className="h-full w-full object-cover"
+          loading="eager"
+          decoding="async"
         />
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%22120%22><path d=%22M0 60 Q30 10 60 60 T120 60%22 fill=%22none%22 stroke=%22white%22 stroke-opacity=%220.05%22/></svg>')] opacity-40" />
+        <div className="absolute inset-0 bg-hero-gradient" />
       </div>
 
       <div className="mx-auto flex min-h-[calc(100dvh-6rem)] max-w-7xl flex-col justify-center px-4 py-16 md:px-6">
