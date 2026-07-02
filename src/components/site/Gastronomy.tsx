@@ -9,7 +9,8 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { platos, type Plato } from "@/data/guadalupe";
-import { ImagePlaceholder } from "./ImagePlaceholder";
+import { images } from "@/data/images";
+import { SmartImage } from "./SmartImage";
 import { SectionHeading } from "./SectionHeading";
 
 export function Gastronomy() {
@@ -45,7 +46,11 @@ export function Gastronomy() {
               transition={{ duration: 0.5, delay: i * 0.05 }}
               className="group flex flex-col overflow-hidden rounded-2xl bg-background/10 backdrop-blur-md border border-white/10 transition hover:bg-background/15"
             >
-              <ImagePlaceholder label={p.imgPrompt} aspect="aspect-square" className="rounded-none" />
+              <SmartImage
+                src={(images.gastronomia as Record<string, string>)[p.id]}
+                alt={p.nombre}
+                aspect="aspect-square"
+              />
               <div className="flex flex-1 flex-col p-5">
                 <h3 className="font-display text-lg font-bold">{p.nombre}</h3>
                 <p className="mt-2 text-sm text-petrol-foreground/75 leading-relaxed flex-1">
@@ -73,7 +78,12 @@ export function Gastronomy() {
                   {selected.nombre}
                 </DialogTitle>
               </DialogHeader>
-              <ImagePlaceholder label={selected.imgPrompt} aspect="aspect-video" />
+              <SmartImage
+                src={(images.gastronomia as Record<string, string>)[selected.id]}
+                alt={selected.nombre}
+                aspect="aspect-video"
+                className="rounded-xl"
+              />
               <div>
                 <h4 className="font-semibold text-foreground">Descripción</h4>
                 <p className="mt-1 text-sm text-muted-foreground">{selected.descripcion}</p>
