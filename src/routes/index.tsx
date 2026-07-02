@@ -1,24 +1,57 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Toaster } from "@/components/ui/sonner";
+import { Navbar } from "@/components/site/Navbar";
+import { Hero } from "@/components/site/Hero";
+import { About } from "@/components/site/About";
+import { Tourism } from "@/components/site/Tourism";
+import { Culture } from "@/components/site/Culture";
+import { Gastronomy } from "@/components/site/Gastronomy";
+import { Gallery } from "@/components/site/Gallery";
+import { Directory } from "@/components/site/Directory";
+import { EventCalendar } from "@/components/site/EventCalendar";
+import { Contact } from "@/components/site/Contact";
+import { Footer } from "@/components/site/Footer";
+import { BackToTop } from "@/components/site/BackToTop";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Guadalupe · Portal turístico del Valle Jequetepeque" },
+      {
+        name: "description",
+        content:
+          "Portal turístico e informativo del distrito de Guadalupe, provincia de Pacasmayo, La Libertad, Perú: historia, cultura, gastronomía, atractivos y servicios.",
+      },
+      { property: "og:title", content: "Guadalupe · Portal turístico del Valle Jequetepeque" },
+      {
+        property: "og:description",
+        content:
+          "Descubre Guadalupe: historia agustina, iglesia matriz, Pakatnamú, playa La Bocana y la gastronomía del valle Jequetepeque.",
+      },
+      { property: "og:type", content: "website" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background text-foreground">
+      <Navbar />
+      <main>
+        <Hero />
+        <About />
+        <Tourism />
+        <Culture />
+        <Gastronomy />
+        <Gallery />
+        <Directory />
+        <EventCalendar />
+        <Contact />
+      </main>
+      <Footer />
+      <BackToTop />
+      <Toaster richColors position="top-right" />
     </div>
   );
 }
