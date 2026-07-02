@@ -10,7 +10,8 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 import { atractivos, type Atractivo } from "@/data/guadalupe";
-import { ImagePlaceholder } from "./ImagePlaceholder";
+import { images } from "@/data/images";
+import { SmartImage } from "./SmartImage";
 import { SectionHeading } from "./SectionHeading";
 
 export function Tourism() {
@@ -35,10 +36,10 @@ export function Tourism() {
               transition={{ duration: 0.5, delay: i * 0.05 }}
               className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition hover:shadow-elegant"
             >
-              <ImagePlaceholder
-                label={a.imgPrompt}
+              <SmartImage
+                src={(images.turismo as Record<string, string>)[a.id]}
+                alt={a.titulo}
                 aspect="aspect-[4/3]"
-                className="rounded-none"
               />
               <div className="flex flex-1 flex-col p-6">
                 {a.ubicacion && (
@@ -81,7 +82,12 @@ export function Tourism() {
                   </DialogDescription>
                 )}
               </DialogHeader>
-              <ImagePlaceholder label={selected.imgPrompt} aspect="aspect-video" />
+              <SmartImage
+                src={(images.turismo as Record<string, string>)[selected.id]}
+                alt={selected.titulo}
+                aspect="aspect-video"
+                className="rounded-xl"
+              />
               <p className="text-sm text-muted-foreground leading-relaxed">
                 {selected.descripcion}
               </p>

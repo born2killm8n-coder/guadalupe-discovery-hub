@@ -2,18 +2,19 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { X, ZoomIn } from "lucide-react";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
-import { ImagePlaceholder } from "./ImagePlaceholder";
+import { images } from "@/data/images";
+import { SmartImage } from "./SmartImage";
 import { SectionHeading } from "./SectionHeading";
 
 const items = [
-  { id: 1, label: "Iglesia Matriz al atardecer", h: "row-span-2" },
-  { id: 2, label: "Plaza de Armas", h: "" },
-  { id: 3, label: "Campiña y arrozales", h: "" },
-  { id: 4, label: "Sala Pakatnamú", h: "row-span-2" },
-  { id: 5, label: "Playa La Bocana", h: "" },
-  { id: 6, label: "Procesión de la Virgen de Guadalupe", h: "" },
-  { id: 7, label: "Complejo Pacatnamú", h: "" },
-  { id: 8, label: "Dulces conventuales", h: "" },
+  { src: images.galeria[0], label: "Iglesia Matriz al atardecer", h: "row-span-2" },
+  { src: images.galeria[1], label: "Plaza de Armas", h: "" },
+  { src: images.galeria[2], label: "Campiña y arrozales", h: "" },
+  { src: images.galeria[3], label: "Sala Pakatnamú", h: "row-span-2" },
+  { src: images.galeria[4], label: "Playa La Bocana", h: "" },
+  { src: images.galeria[5], label: "Procesión de la Virgen de Guadalupe", h: "" },
+  { src: images.galeria[6], label: "Complejo Pacatnamú", h: "" },
+  { src: images.galeria[7], label: "Dulces conventuales", h: "" },
 ];
 
 export function Gallery() {
@@ -30,7 +31,7 @@ export function Gallery() {
         <div className="grid auto-rows-[180px] grid-cols-2 gap-4 md:grid-cols-4">
           {items.map((it, i) => (
             <motion.button
-              key={it.id}
+              key={it.src}
               type="button"
               onClick={() => setZoom(it)}
               initial={{ opacity: 0, scale: 0.95 }}
@@ -40,12 +41,8 @@ export function Gallery() {
               className={`group relative overflow-hidden rounded-2xl border border-border shadow-soft ${it.h}`}
               aria-label={`Ampliar ${it.label}`}
             >
-              <ImagePlaceholder
-                label={it.label}
-                aspect="h-full"
-                className="h-full rounded-none"
-              />
-              <div className="absolute inset-0 flex items-end bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition group-hover:opacity-100">
+              <SmartImage src={it.src} alt={it.label} aspect="h-full" className="h-full" />
+              <div className="pointer-events-none absolute inset-0 flex items-end bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition group-hover:opacity-100">
                 <div className="flex w-full items-center justify-between p-4 text-white">
                   <span className="text-sm font-medium">{it.label}</span>
                   <ZoomIn className="h-4 w-4" />
@@ -62,7 +59,7 @@ export function Gallery() {
             <>
               <DialogTitle className="sr-only">{zoom.label}</DialogTitle>
               <div className="relative overflow-hidden rounded-2xl">
-                <ImagePlaceholder label={zoom.label} aspect="aspect-video" className="rounded-none" />
+                <SmartImage src={zoom.src} alt={zoom.label} aspect="aspect-video" priority />
                 <button
                   onClick={() => setZoom(null)}
                   className="absolute top-3 right-3 grid h-9 w-9 place-items-center rounded-full bg-background/90 text-foreground shadow"
