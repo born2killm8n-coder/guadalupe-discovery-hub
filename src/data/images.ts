@@ -4,14 +4,14 @@
 // edita ÚNICAMENTE este archivo.
 
 export const images = {
-  hero: "/images/hero.jpg",
+  hero: "/images/hero.svg",
 
   turismo: {
-    "pueblo-historico": "/images/turismo-pueblo-historico.jpg",
+    "pueblo-historico": "/images/turismo-pueblo-historico.svg",
     "iglesia-matriz": "/images/turismo-iglesia-matriz.jpg",
-    pakatnamu: "/images/turismo-pakatnamu.jpg",
-    "playa-bocana": "/images/turismo-playa-bocana.jpg",
-    pacatnamu: "/images/turismo-pacatnamu.jpg",
+    pakatnamu: "/images/turismo-pakatnamu.svg",
+    "playa-bocana": "/images/turismo-playa-bocana.svg",
+    pacatnamu: "/images/turismo-pacatnamu.svg",
     campina: "/images/turismo-campina.jpg",
   },
 
