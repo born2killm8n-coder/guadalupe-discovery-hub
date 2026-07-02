@@ -4,32 +4,32 @@
 // edita ÚNICAMENTE este archivo.
 
 export const images = {
-  hero: "/images/hero.svg",
+  hero: "/images/hero.jpg",
 
   turismo: {
-    "pueblo-historico": "/images/turismo-pueblo-historico.svg",
-    "iglesia-matriz": "/images/turismo-iglesia-matriz.svg",
-    pakatnamu: "/images/turismo-pakatnamu.svg",
-    "playa-bocana": "/images/turismo-playa-bocana.svg",
-    pacatnamu: "/images/turismo-pacatnamu.svg",
-    campina: "/images/turismo-campina.svg",
+    "pueblo-historico": "/images/turismo-pueblo-historico.jpg",
+    "iglesia-matriz": "/images/turismo-iglesia-matriz.jpg",
+    pakatnamu: "/images/turismo-pakatnamu.jpg",
+    "playa-bocana": "/images/turismo-playa-bocana.jpg",
+    pacatnamu: "/images/turismo-pacatnamu.jpg",
+    campina: "/images/turismo-campina.jpg",
   },
 
   gastronomia: {
-    "sudado-lifes": "/images/gastronomia-sudado-lifes.svg",
-    "arroz-pato": "/images/gastronomia-arroz-pato.svg",
-    "seco-cabrito": "/images/gastronomia-seco-cabrito.svg",
-    dulces: "/images/gastronomia-dulces.svg",
+    "sudado-lifes": "/images/gastronomia-sudado-lifes.jpg",
+    "arroz-pato": "/images/gastronomia-arroz-pato.jpg",
+    "seco-cabrito": "/images/gastronomia-seco-cabrito.jpg",
+    dulces: "/images/gastronomia-dulces.jpg",
   },
 
   galeria: [
-    "/images/galeria-1.svg",
-    "/images/galeria-2.svg",
-    "/images/galeria-3.svg",
-    "/images/galeria-4.svg",
-    "/images/galeria-5.svg",
-    "/images/galeria-6.svg",
-    "/images/galeria-7.svg",
-    "/images/galeria-8.svg",
+    "/images/galeria-1.jpg",
+    "/images/galeria-2.jpg",
+    "/images/galeria-3.jpg",
+    "/images/galeria-4.jpg",
+    "/images/galeria-5.jpg",
+    "/images/galeria-6.jpg",
+    "/images/galeria-7.jpg",
+    "/images/galeria-8.jpg",
   ],
 } as const;
